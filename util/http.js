@@ -1,4 +1,6 @@
-import { config } from '../config';
+import {
+  config
+} from '../config';
 const tips = {
   1005: `appkey无效`,
   1: `出现错误`
@@ -6,8 +8,15 @@ const tips = {
 
 class HTTP {
   request(params) {
-    const { url, method, data } = params;
-    const { api_base_url, appkey } = config;
+    const {
+      url,
+      method,
+      data
+    } = params;
+    const {
+      api_base_url,
+      appkey
+    } = config;
     wx.request({
       url: api_base_url + url,
       method: method || 'GET',
@@ -19,11 +28,15 @@ class HTTP {
       success: res => {
         let code = res.statusCode.toString();
         if (code.startsWith(`2`)) {
-          params.success(res.data);
+          params.success && params.success(res.data);
         } else {
-          let { data:{ error_code}} = res
+          let {
+            data: {
+              error_code
+            }
+          } = res
           this._showError(error_code)
-         
+
         }
       },
       fail: err => {
@@ -33,7 +46,7 @@ class HTTP {
   }
 
   _showError(errorCode) {
-    if (!errorCode){
+    if (!errorCode) {
       errorCode = 1
     }
     wx.showToast({
@@ -44,4 +57,6 @@ class HTTP {
   }
 }
 
-export { HTTP };
+export {
+  HTTP
+};

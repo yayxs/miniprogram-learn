@@ -1,2 +1,10 @@
 <!--page/classic/classic.wxml-->
-<v-like />
+
+<view class="header">
+<v-date index="{{data.index}}" class="date" />
+
+<v-like class="like" bind:like="onLike" like="{{data.like_status}}" count="{{data.fav_nums}}" />
+</view>
+
+
+<v-movie img="{{data.image}}" content="{{data.content}}" />
