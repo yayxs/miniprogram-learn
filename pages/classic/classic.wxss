@@ -50,3 +50,13 @@
     width: 40rpx;
     height: 40rpx;
 }
+
+.naviWrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navi{
+  position: absolute;
+  bottom: 140rpx
+}

@@ -21,29 +21,27 @@ Page({
       });
     });
   },
+  data: {
+    first: false,
+    latest: true
+  },
+  onLeft() {
+
+  },
+  onRight() {
+    let index = this.data.data.index
+    console.log(index)
+   classicModel.getPre((res)=>{
+     console.log(res)
+     this.setData({
+       data:res
+     })
+   },index)
+  },
   onLike(ev) {
     console.log(ev)
     let flag = ev.detail.flag
     likeModel.like(flag, this.data.data.id, this.data.data.type)
   }
-  // onLoad() {
-  //   classic.getLatest(res => {
-  //     console.log(res);
-  //   });
-  //   // wx.request({
-  //   //   url: 'http://bl.7yue.pro/v1/classic/latest',
-  //   //   header: {
-  //   //     appkey: `zLInIPqV0qOnEMKA`
-  //   //   },
-  //   //   success: res => {
-  //   //     console.log(res);
-  //   //   }
-  //   // });
-  //   // http.request({
-  //   //   url: `classic/latest`,
-  //   //   success: res => {
-  //   //     console.log(res);
-  //   //   }
-  //   // });
-  // }
+
 });
