@@ -1,44 +1,39 @@
-// components/navi/index.js
+// components/navi/navi.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    latest:{
-      type:Boolean
-    },
-    title:{
-      type:String
-    },
-    first:{
-      type:Boolean
-    }
+    title: String,
+    first: Boolean,
+    latest: Boolean 
   },
 
   /**
    * 组件的初始数据
    */
   data: {
-    disLeftSrc:'./images/triangle.dis@left.png',
-    disRightSrc:`./images/triangle.dis@right.png`,
-    leftSrc:`./images/triangle@left.png`,
-    rightSrc:`./images/triangle@right.png`
+    disLeftSrc: 'images/triangle.dis@left.png',
+    leftSrc: 'images/triangle@left.png',
+    disRightSrc: 'images/triangle.dis@right.png',
+    rightSrc: 'images/triangle@right.png'
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-    onLeft(){
+    onLeft: function(event) {
       if(!this.properties.latest){
-        this.triggerEvent('left', {}, {})
+        this.triggerEvent('left', {}, {});
 
       }
     },
-    onRight(){
-      if(!this.properties.first){
-        this.triggerEvent('right', {}, {})
+
+    onRight: function(event) {
+      if (!this.properties.first) {
+        this.triggerEvent('right', {}, {});
       }
     }
   }
-})
+});

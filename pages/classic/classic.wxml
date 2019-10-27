@@ -1,14 +1,13 @@
-<!--page/classic/classic.wxml-->
+<view class="container">
+    <view class="header">
+        <v-date class="episode" index="{{classic.index}}" />
+        <view class="like-container">
+            <v-like class="like" bind:like="onLike" like="{{likeStatus}}" count="{{likeCount}}" />
+        </view>
+    </view>
+    <v-movie hidden="{{classic.type !=100}}" img="{{classic.image}}" content="{{classic.content}}" />
+    <v-music hidden="{{classic.type !=200}}" img="{{classic.image}}" content="{{classic.content}}" />
+    <v-essay hidden="{{classic.type !=300}}" img="{{classic.image}}" content="{{classic.content}}" />
 
-<view class="header">
-    <v-date index="{{data.index}}" class="date" />
-
-    <v-like class="like" bind:like="onLike" like="{{data.like_status}}" count="{{data.fav_nums}}" />
-</view>
-
-
-<v-movie img="{{data.image}}" content="{{data.content}}" />
-
-<view class="naviWrap">
-<v-navi bind:left="onLeft" bind:right="onRight" class = "navi" title="{{data.title}}" first="{{first}}" latest = "{{latest}}"/>
+    <v-navi bind:left="onNext" bind:right="onPrevious" title="{{classic.title}}" first="{{first}}" latest="{{latest}}" class="navi" />
 </view>

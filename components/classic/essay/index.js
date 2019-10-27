@@ -1,28 +1,22 @@
 // components/classic/essay/index.js
 
-import {beh } from '../beh.js'
+import { beh } from '../beh.js';
 Component({
   /**
    * 组件的属性列表
    */
-  behaviors:[beh],
-  // properties: {
-  //   img:{
-  //     type:String
-  //   }
-  // },
+  behaviors: [beh],
+  properties: {
+    hidden: Boolean
+  },
 
   /**
    * 组件的初始数据
    */
-  data: {
-
-  },
+  data: {},
 
   /**
    * 组件的方法列表
    */
-  methods: {
-
-  }
-})
+  methods: {}
+});

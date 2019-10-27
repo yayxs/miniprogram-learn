@@ -1,11 +1,13 @@
 // components/classic/music/index.js
-import { beh} from '../beh.js'
+import { beh } from '../beh.js';
 Component({
   /**
    * 组件的属性列表
    */
   behaviors: [beh],
-
+  properties: {
+    hidden: Boolean
+  },
   // properties: {
   //   img: {
   //     type: String
@@ -26,7 +28,5 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {
-
-  }
-})
+  methods: {}
+});

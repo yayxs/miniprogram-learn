@@ -1,10 +1,13 @@
 {
-  "pages": ["pages/classic/classic"],
+  "pages": [
+    "pages/classic/classic"
+  ],
   "window": {
     "navigationBarTitleText": "洋小洋",
     "navigationBarBackgroundColor": "#A5C6FF",
     "navigationBarTextStyle": "black",
     "backgroundColor": "#ffffff",
     "enablePullDownRefresh": false
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
